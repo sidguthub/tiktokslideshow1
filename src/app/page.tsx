@@ -148,11 +148,16 @@ export default function SlideshowEditor() {
               origin={false}
               snappable={true}
               bounds="parent"
-              onDrag={e => e.target.style.transform = e.transform}
-              onRotate={e => e.target.style.transform = e.transform}
+              onDrag={e => {
+                e.target.style.transform = e.transform;
+              }}
+              onRotate={e => {
+                e.target.style.transform = e.transform;
+              }}
               onResizeStart={e => {
+                const target = e.target as HTMLElement;
                 resizeStartValues.current = {
-                  width: e.target.offsetWidth,
+                  width: target.offsetWidth,
                   fontSize: fontSize,
                 };
               }}
@@ -163,8 +168,9 @@ export default function SlideshowEditor() {
                 const scale = e.width / initialWidth;
                 setFontSize(initialFontSize * scale);
                 
-                e.target.style.width = `${e.width}px`;
-                e.target.style.transform = e.drag.transform;
+                const target = e.target as HTMLElement;
+                target.style.width = `${e.width}px`;
+                target.style.transform = e.drag.transform;
               }}
             />
           </>
