@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+// TikTok Sans via Google Fonts
+import { TikTok_Sans } from "next/font/google";
+
+const tikTokSans = TikTok_Sans({
   subsets: ["latin"],
-  display: 'swap',
-  variable: '--font-inter',
-  weight: ['400', '700'] 
+  display: "swap",
+  variable: "--font-tiktok",
+  weight: ["400", "700"]
 });
 
 export const metadata: Metadata = {
@@ -16,17 +18,14 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en" className="h-full">
       <body
-        className={`${inter.variable} antialiased h-full bg-gray-900 text-white`}
+        className={`${tikTokSans.variable} antialiased h-full bg-gray-900 text-white`}
       >
         {children}
       </body>
     </html>
   );
 }
-

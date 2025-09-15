@@ -120,7 +120,7 @@ export default function SlideshowEditor() {
             >
               <span
                 style={{
-                  fontFamily: 'var(--font-inter), sans-serif',
+                  fontFamily: 'var(--font-tiktok), sans-serif',
                   color: 'black',
                   fontSize: `${fontSize}px`,
                   fontWeight: isBold ? 600 : 400,
